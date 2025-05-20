@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Image Hub</title>
+  <style>
+    :root {
+      --bg: #121212;
+      --card-bg: #1e1e1e;
+      --text: #f0f0f0;
+      --accent: #a5d6ff;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 20px;
+      font-size: 16px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      text-align: center;
+      font-size: 0.95rem;
+      margin-bottom: 30px;
+      color: #ccc;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 15px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      transition: background 0.3s;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .card:hover {
+      background: #2a2a2a;
+    }
+
+    .card a {
+      text-decoration: none;
+      color: var(--accent);
+      font-weight: bold;
+      font-size: 1rem;
+      display: block;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+    /* 📱 모바일 최적화 */
+    @media (max-width: 480px) {
+      body {
+        padding: 12px;
+        font-size: 15px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .card {
+        padding: 10px;
+      }
+
+      .card a {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>캐릭터 이미지 허브</h1>
+  <p>캐릭터를 선택하면 해당 이미지 갤러리로 이동합니다</p>
+
+  <div class="gallery">
+    <div class="card"><a href="LU">루치아나</a></div>
+    <div class="card"><a href="KI">키리사키</a></div>
+    <div class="card"><a href="HI">하일</a></div>
+    <div class="card"><a href="EL">엘리야</a></div>
+    <div class="card"><a href="RA">라비아나</a></div>
+    <div class="card"><a href="HO">하워드</a></div>
+    <div class="card"><a href="CH">청화</a></div>
+	<div class="card"><a href="LO">장소</a></div>
+	<div class="card"><a href="EX">엑스트라 캐릭터</a></div>
+  </div>
+</body>
+</html>
