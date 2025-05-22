@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>사이커스 소사이어티 장소 이미지</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #eee;
+      font-family: sans-serif;
+      padding: 20px;
+      font-size: 16px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #f8f8f8;
+      font-size: 1.8rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .thumb {
+      background: #222;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+    }
+
+    .thumb img {
+      width: 100%;
+      display: block;
+      transition: transform 0.2s;
+      cursor: pointer;
+    }
+
+    .thumb img:hover {
+      transform: scale(1.05);
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+    }
+
+    .lightbox:target {
+      display: flex;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 12px;
+        font-size: 15px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>사이커스 소사이어티 장소 이미지</h1>
+
+  <div class="gallery">
+    <!-- 썸네일 & 링크 연결 -->
+    <!-- 00~16 -->
+    <!-- 반복 구조 -->
+    <div class="thumb"><a href="#img00"><img src="SE.png" alt="Image 00"></a></div>
+    <div class="thumb"><a href="#img01"><img src="SO.png" alt="Image 01"></a></div>
+    <div class="thumb"><a href="#img02"><img src="SH.png" alt="Image 02"></a></div>
+    <div class="thumb"><a href="#img03"><img src="SL.png" alt="Image 03"></a></div>
+    <div class="thumb"><a href="#img04"><img src="SB.png" alt="Image 04"></a></div>
+  </div>
+
+  <!-- 라이트박스 확대 뷰 -->
+  <div id="img00" class="lightbox"><a href="#"><img src="SE.png" alt="00 large"></a></div>
+  <div id="img01" class="lightbox"><a href="#"><img src="SO.png" alt="01 large"></a></div>
+  <div id="img02" class="lightbox"><a href="#"><img src="SH.png" alt="02 large"></a></div>
+  <div id="img03" class="lightbox"><a href="#"><img src="SL.png" alt="03 large"></a></div>
+  <div id="img04" class="lightbox"><a href="#"><img src="SB.png" alt="04 large"></a></div>
+
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>장소 이미지</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #eee;
+      font-family: sans-serif;
+      padding: 20px;
+      font-size: 16px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #f8f8f8;
+      font-size: 1.8rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .thumb {
+      background: #222;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+    }
+
+    .thumb img {
+      width: 100%;
+      display: block;
+      transition: transform 0.2s;
+      cursor: pointer;
+    }
+
+    .thumb img:hover {
+      transform: scale(1.05);
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+    }
+
+    .lightbox:target {
+      display: flex;
+    }
+
+    .yc-link {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .yc-link a {
+      color: #01ffd8;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    .yc-link a:hover {
+      text-decoration: underline;
+    }
+
+    .ss-link {
+      margin-top: 40px;
+      text-align: center;
+    }
+    .ss-link a {
+      color: #b5b5ff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    .ss-link a:hover {
+      text-decoration: underline;
+    }
+
+    .hh-link {
+      margin-top: 40px;
+      text-align: center;
+    }
+    .hh-link a {
+      color: #de3434;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    .hh-link a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 12px;
+        font-size: 15px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 10px;
+      }
+
+      .yc-link a {
+        font-size: 0.95rem;
+      }
+
+      .ss-link a {
+        font-size: 0.95rem;
+      }
+
+      .hh-link a {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>장소 이미지</h1>
+
+  <div class="gallery">
+    <!-- 썸네일 & 링크 연결 -->
+    <!-- 00~16 -->
+    <!-- 반복 구조 -->
+    <div class="thumb"><a href="#img00"><img src="UW.png" alt="Image 00"></a></div>
+    <div class="thumb"><a href="#img01"><img src="OW.png" alt="Image 01"></a></div>
+    <div class="thumb"><a href="#img02"><img src="HF.png" alt="Image 02"></a></div>
+    <div class="thumb"><a href="#img03"><img src="HM.png" alt="Image 03"></a></div>
+    <div class="thumb"><a href="#img04"><img src="CN.png" alt="Image 04"></a></div>
+    <div class="thumb"><a href="#img05"><img src="HP.png" alt="Image 05"></a></div>
+    <div class="thumb"><a href="#img06"><img src="OF.png" alt="Image 06"></a></div>
+    <div class="thumb"><a href="#img07"><img src="CS.png" alt="Image 07"></a></div>
+    <div class="thumb"><a href="#img08"><img src="EP.png" alt="Image 08"></a></div>
+    <div class="thumb"><a href="#img09"><img src="WH.png" alt="Image 09"></a></div>
+    <div class="thumb"><a href="#img10"><img src="MK.png" alt="Image 10"></a></div>
+  </div>
+
+  <!-- 라이트박스 확대 뷰 -->
+  <div id="img00" class="lightbox"><a href="#"><img src="UW.png" alt="00 large"></a></div>
+  <div id="img01" class="lightbox"><a href="#"><img src="OW.png" alt="01 large"></a></div>
+  <div id="img02" class="lightbox"><a href="#"><img src="HF.png" alt="02 large"></a></div>
+  <div id="img03" class="lightbox"><a href="#"><img src="HM.png" alt="03 large"></a></div>
+  <div id="img04" class="lightbox"><a href="#"><img src="CN.png" alt="04 large"></a></div>
+  <div id="img05" class="lightbox"><a href="#"><img src="HP.png" alt="05 large"></a></div>
+  <div id="img06" class="lightbox"><a href="#"><img src="OF.png" alt="06 large"></a></div>
+  <div id="img07" class="lightbox"><a href="#"><img src="CS.png" alt="07 large"></a></div>
+  <div id="img08" class="lightbox"><a href="#"><img src="EP.png" alt="08 large"></a></div>
+  <div id="img09" class="lightbox"><a href="#"><img src="WH.png" alt="09 large"></a></div>
+  <div id="img10" class="lightbox"><a href="#"><img src="MK.png" alt="10 large"></a></div>
+
+  <div class="yc-link">
+    <a href="yc.html">이그드라실 코퍼레이션 이미지 보기</a>
+  </div>
+  <div class="ss-link">
+    <a href="ss.html">사이커스 소사이어티 이미지 보기</a>
+  </div>
+  <div class="hh-link">
+    <a href="hh.html">하우스 & 하워드 이미지 보기</a>
+  </div>
+</body>
+</html>
